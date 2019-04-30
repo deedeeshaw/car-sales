@@ -1,24 +1,6 @@
-// d3.json("../static/data/tripdata_js.json").then(function (cycles) {
+// CREATE ROWS IN THE TABLE
 
-// // CREATE TABLE
-// // using d3 to select the table
-// var tBody = d3.select('tbody');
-// // starting the loop with forEach to create the table
-// cycles.forEach(cycle) => {
-//     tBody.append("tr");
-// // using object.values to store the values from the cycles_js
-//     Object.values().forEach((cValues) => {
-//         // adding the data cells
-//         var cell = tBody.append("td");
-//         // placing values in the table
-//         cell.text(cValues);
-//     });
-//   });
-
-// the route as url
-  // d3.json("static/data/tripdata_js.json").then(function (data) {
-
-  d3.json("/tables").then(function (data) {
+  d3.json("/data").then(data => {
     var column=["year", "startstationname", 
     "endstationname",
     "usertype", "gender", "birthyear", "tripduration"];
@@ -28,9 +10,9 @@
         var row = tbody.append("tr");
         
         Object.entries(cycle).forEach(([key, value])=> {
-         console.log("hello");
+  
           if (column.includes(key)) {
-                console.log(key, value);
+                // console.log(key, value);
                 row.append("td").text(value);
             }
           });

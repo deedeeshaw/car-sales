@@ -11,11 +11,12 @@ app = Flask(__name__)
 def index():
         return render_template("index.html")
 
-@app.route("/tables")
+@app.route("/data")
 def data():
         
         return get_all_data('2019_tripdata')
-    
+
+
 
 if __name__=='__main__':
     app.run(debug=True)
