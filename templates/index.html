@@ -25,7 +25,7 @@
   <link rel='icon' href="{{url_for('static', filename='favicon.ico')}}" type='image/x-icon'/ >
 
 
-<!-- Leaflet -->
+<!-- LEAFLET -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
 integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
 crossorigin=""/>
@@ -33,19 +33,15 @@ crossorigin=""/>
 integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
 crossorigin=""></script>
 
+
 </head>
 
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
     <a class="navbar-brand mr-1" href="#">NYC Cycles</a>
-
-
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
-      
-
   </nav>
 
   <div id="wrapper">
@@ -64,6 +60,13 @@ crossorigin=""></script>
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#map">
+          <i class="fas fa-fw fa-globe-americas"></i>
+          <span>Map</span></a>
+      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="#table">
           <i class="fas fa-fw fa-table"></i>
@@ -74,88 +77,148 @@ crossorigin=""></script>
     <div id="content-wrapper">
 
       <div class="container-fluid">
-
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">NYC Cycles Dashboard</a>
+            <a href="#">Dashboard - NYC Cycles</a>
           </li>
          
         </ol>
         <div>
             <p>Citi has collected data on the use of cycles in NYC</p>
         </div>
-
-        <!-- Area Chart -->
-        <!-- <div class="card mb-3"> -->
+        <!-- CHART HEADING-->
+        <div class="card mb-3">
+          
           <div class="card-header" id="chart">
-            <i class="fas fa-chart-area"></i>
-            Chart</div>
-          <!-- <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
-          </div> -->
+            <a href="#wrapper">
+              <i class="fas fa-chart-area"></i>
+              Charts
+            </a>
+          </div>
+        
         </div>
 
-    <!-- LEAFLET -->
+    <!-- TABLEAU -->
         <div class="row">
-          <div class="col-xl-8 col-lg-7">
+          <!-- <div class="card mb-3"> -->
+            <!-- <div class="col-xl-8 col-lg-7">
             
-            <div class="card shadow mb-4">
-              <!-- Card Header - Dropdown -->
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Start and End Stations</h6>
-                <div class="dropdown no-arrow"></div>
-                 
-              </div>
-              <!-- Card Body -->
-              <div class="card-body" >
-                <!-- <div class="chart-area" id="myMap"> -->
-                <div id="myMap">
-                  <!--myAreaChart used for bar graph-->                      
-                  <canvas id="myAreaChart"></canvas>
-                </div>          
-              </div>
-            </div>
-          </div>
-
-          <!-- BAR CHART -->
-          <div class="col-xl-4 col-lg-5">
-            <div class="card shadow mb-4">
-              <!-- Card Header - Dropdown -->
-              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Usertype</h6>
-              </div>
-
               <!-- Card Body -->
               <div class="card-body">
                 <!-- <div class="chart-pie pt-4 pb-2" > -->
-                  <div id="plot">
+                  <!-- <div id="plot"> -->
+                      <div class='tableauPlaceholder' id='viz1556685351179' style='position: relative'>
+                          <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiCycle&#47;CycleSharingStory&#47;1_rss.png' style='border: none' />
+                          </a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                          <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+                          <param name='name' value='CitiCycle&#47;CycleSharingStory' />
+                          <param name='tabs' value='yes' /><param name='toolbar' value='yes' />
+                          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiCycle&#47;CycleSharingStory&#47;1.png' />
+                          <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
+                          <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
+                          <param name='display_count' value='yes' /></object>
+                          </div>                
+                          
+                          <script type='text/javascript'>                    
+                          var divElement = document.getElementById('viz1556685351179');                    
+                          var vizElement = divElement.getElementsByTagName('object')[0];                    
+                          vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';       
+                          var scriptElement = document.createElement('script');
+                          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                          vizElement.parentNode.insertBefore(scriptElement, vizElement);         
+                          </script>
                     <canvas id="myPieChart plot"></canvas>
                   </div>
                 <!-- </div> -->
-                <div class="mt-4 text-center small">
-                  <span class="mr-2">
+              
+                <!-- <div class="mt-4 text-center small"> -->
+                  <!-- <span class="mr-2">
                     <i class="fas fa-circle text-primary"></i> Subscriber
                   </span>
                   <span class="mr-2">
                     <i class="fas fa-circle text-success"></i> Customer
-                  </span>
+                  </span> -->
                   <!-- <span class="mr-2">
                     <i class="fas fa-circle text-info"></i> Referral
                   </span> -->
                 </div>
-              </div>
-            </div>
+              
+      
+              <div class="card shadow mb-12">
+                  <!-- Card Header - Dropdown -->
+                  <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Start and End Stations</h6>
+                    <div class="dropdown no-arrow"></div>
+                     
+                  </div> -->
+                  <!-- Card Body -->
+                  <!-- <div class="card-body" > -->
+                    <!-- <div class="chart-area" id="myMap"> -->
+                    <!-- <div id="myMap"> -->
+                      <!--myAreaChart used for bar graph-->                      
+                      <!-- <canvas id="myAreaChart"></canvas>
+                    </div>          
+                  </div>
+                </div>
+              </div> -->
+    
+              <!-- TABLEAU -->
+              <!-- <div class="col-xl-4 col-lg-5"> -->
+                <!-- <div class="card shadow mb-4"> -->
+                  <!-- Card Header - Dropdown -->
+                  <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary"></h6>
+                  </div> -->
+
+        <!-- MAP HEADING-->
+        <div class="card mb-3">
+          
+          <div class="card-header" id="map">
+            <a href="#wrapper">
+              <i class="fas fa-globe-americas"></i>
+              Stations
+            </a>
           </div>
+          
+        </div>
+        
+        <!-- LEAFLET -->
+        <div class="row">
+            <div class="card-body">
+               <div class="chart-area">
+                    <div id="myMap">
+                                           
+                       <canvas id="myAreaChart"></canvas>
+                    </div>          
+                </div>
+            </div>
+        </div> 
+    
+            
+        <div class="col-xl-4 col-lg-5">
+                <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary"></h6>
+                  </div> -->
+              </div>
         </div>
 
+        <!-- DATA TABLE HEADING-->
 
-        <!-- DataTables-->
         <div class="card mb-3">
+
           <div class="card-header" id="table">
-            <i class="fas fa-table"></i>
-            Data Table</div>
-          <div class="card-body">
+            <a href="#wrapper">
+              <i class="fas fa-table"></i>
+             Data Table
+            </a>
+          </div>
+        
+        </div>
+        <!-- DATA TABLE -->
+        <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -182,12 +245,10 @@ crossorigin=""></script>
                   </tr>
                 </tfoot>
                 <tbody></tbody>
-                  
-                
               </table>
             </div>
           </div>
-        </div>
+        
 
       </div>
       <!-- /.container-fluid -->
@@ -257,7 +318,7 @@ crossorigin=""></script>
   <!--The JS files-->
   <script src="{{url_for('static', filename='js/tables.js')}}"></script>
   <script src="{{url_for('static', filename='js/map.js')}}"></script>
-  <script src="{{url_for('static', filename='js/plot.js')}}"></script>
+  <!-- <script src="{{url_for('static', filename='js/plot.js')}}"></script> -->
 </body>
 
 </html>

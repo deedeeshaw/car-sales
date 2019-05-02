@@ -1,8 +1,7 @@
-// var ctx = document.getElementById("myAreaChart")
 // Create a map object
 var myMap = L.map("myMap", {
-  center: [40.7829, -73.9654],
-  zoom: 12
+  center: [40.7440, -74.0324],
+  zoom: 13
 });
 
 // Add a tile layer
@@ -13,31 +12,44 @@ L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   accessToken: API_KEY
 }).addTo(myMap);
 
-// // An array containing each station name and location
-// d3.json("/data").then(point => {
-//   var stMarkers=["startstationlatitude", "startstationlongitude", 
-//   "startstationname"];    
-//       Object.entries(point).forEach(([key, value])=> {
+var redIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  // iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
-//         if (stMarkers.includes(key)) {
-//               console.log(key, value);
-//               // (value);
-//           }
-//         });
-//        });
+var greenIcon = new L.Icon({
+  iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  // iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
-var stations = [{
-  location: [40.7128, -74.0059],
-  name: "New York",
-  population: "8,550,405"
-}];
+d3.json("/starting_stations").then(station=> {
+   
+  for (var i = 0; i < station.length; i++) {
 
-
-// Loop through the station array and create one marker for each station, bind a popup containing its name and population add it to the map
-for (var i = 0; i < stations.length; i++) {
-  var station = stations[i];
-  L.marker(station.location)
-    .bindPopup("<h1>" + station.name + "</h1>")
-    // <hr> <h3>Population " + city.population + "</h3>")
-    .addTo(myMap);
+    L.marker(([station[i].startstationlatitude, station[i].startstationlongitude]), {icon: greenIcon})
+// bind a popup containing its name and add it to the map
+  .bindPopup("<h6>" + station[i].startstationname + "</h6>").addTo(myMap)
 }
+});
+
+
+d3.json("/ending_stations").then(estation=> {
+
+    for (var i = 0; i < estation.length; i++) {
+
+      L.marker(([estation[i].endstationlatitude, estation[i].endstationlongitude]), {icon: redIcon})
+  // bind a popup containing its name and add it to the map
+    .bindPopup("<h6>" + estation[i].endstationname + "</h6>").addTo(myMap)
+}
+});
+
+
+  

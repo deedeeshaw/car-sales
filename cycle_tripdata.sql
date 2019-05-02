@@ -25,6 +25,15 @@ add column year date;
 update 2019_tripdata
 set year = extract(year from starttime);
 
+CREATE TABLE start_stations
+AS
+SELECT DISTINCT startstationid,
+		startstationname, 
+        startstationlatitude,
+		startstationlongitude
+FROM 2019_tripdata;
+
+SELECT count(*) FROM end_stations;
 
 -- insert into 2019_tripdata select * from 2018_tripdata;
 
