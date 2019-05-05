@@ -28,7 +28,9 @@ def starting_stations():
 
         return start_station_location('start_stations_19')
 
-
+@app.route("/tables")
+def tables():
+        return render_template("tables.html")
 
 if __name__=='__main__':
     app.run(debug=True)

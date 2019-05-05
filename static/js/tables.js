@@ -12,7 +12,7 @@
         Object.entries(cycle).forEach(([key, value])=> {
   
           if (column.includes(key)) {
-                // console.log(key, value);
+                
                 row.append("td").text(value);
             }
           });

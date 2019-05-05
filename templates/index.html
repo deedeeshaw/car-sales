@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>NYC Cycles</title>
+  <title>Citi Cycles</title>
 
   <!-- Custom fonts for this template-->
   <link href="{{url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -40,13 +40,13 @@ crossorigin=""></script>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
     <a class="navbar-brand mr-1" href="#">NYC Cycles</a>
-    <!-- Navbar -->
+    <!-- NAVBAR -->
     <ul class="navbar-nav ml-auto ml-md-0">
   </nav>
 
   <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!--################### SIDEBAR #########################-->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="#">
@@ -68,26 +68,56 @@ crossorigin=""></script>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" href="#table">
+        <a class="nav-link" href="/tables">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+          <span>Table</span></a>
       </li>
     </ul>
-
+<!--########### CONTENT ##############################################-->
     <div id="content-wrapper">
 
       <div class="container-fluid">
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Dashboard - NYC Cycles</a>
+            <a href="#">Dashboard - Citi Cycles</a>
           </li>
          
         </ol>
         <div>
-            <p>Citi has collected data on the use of cycles in NYC</p>
+          <script img="static/js/img/citi_bike.jpg"></script>
+            <p>Citi Bike is the nation's largest bike share program,
+              with 12,000 bikes and 750 stations across Manhattan, Brooklyn, Queens and Jersey City. 
+              It was designed for quick trips with convenience in mind, 
+              and it’s a fun and affordable way to get around town.</p>
+            </br>
+            <p>Riding a Citi bike is as easy as 1, 2, 3</p>
+            <ul>
+              <li>FInd a bike station and unlock a bike using your daily ride code or member key</li>
+              <li>Take as many rides as you like while your pass or membership is active.</li>
+              <li>Return the bike to any of the 750 stations.</li>
+            </ul>
+          </br>
+          <p>Which stations are most popular? Has the proportion of short-term customers and annual subscribers changed?
+              What is the gender breakdown of active participants (Male v. Female)? 
+              How does the average trip duration change by age?
+              The data collected by Citibike in the following areas helps answer these and other questions.</p>
+          <ol>
+            <li>Trip Duration (seconds)</li>
+            <li>Start Time and Date</li>
+            <li>Stop Time and Date</li>
+            <li>Start Station Name</li>
+            <li>End Station Name</li>
+            <li>Station ID</li>
+            <li>User Type (Customer = 24-hour pass or 3-day pass user; Subscriber = Annual Member)</li>
+            <li>Gender</li>
+            <li>Year of Birth</li>
+          </ol>
         </div>
-        <!-- CHART HEADING-->
+
+ <!--###################################################################################-->
+
+        <!-- TABLEAU CHART HEADING-->
         <div class="card mb-3">
           
           <div class="card-header" id="chart">
@@ -118,7 +148,7 @@ crossorigin=""></script>
                           <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
                           <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
                           <param name='display_count' value='yes' /></object>
-                          </div>                
+                      </div>                
                           
                           <script type='text/javascript'>                    
                           var divElement = document.getElementById('viz1556685351179');                    
@@ -129,49 +159,13 @@ crossorigin=""></script>
                           vizElement.parentNode.insertBefore(scriptElement, vizElement);         
                           </script>
                     <canvas id="myPieChart plot"></canvas>
-                  </div>
-                <!-- </div> -->
+             </div>
               
-                <!-- <div class="mt-4 text-center small"> -->
-                  <!-- <span class="mr-2">
-                    <i class="fas fa-circle text-primary"></i> Subscriber
-                  </span>
-                  <span class="mr-2">
-                    <i class="fas fa-circle text-success"></i> Customer
-                  </span> -->
-                  <!-- <span class="mr-2">
-                    <i class="fas fa-circle text-info"></i> Referral
-                  </span> -->
-                </div>
+        </div>
               
-      
-              <div class="card shadow mb-12">
-                  <!-- Card Header - Dropdown -->
-                  <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Start and End Stations</h6>
-                    <div class="dropdown no-arrow"></div>
-                     
-                  </div> -->
-                  <!-- Card Body -->
-                  <!-- <div class="card-body" > -->
-                    <!-- <div class="chart-area" id="myMap"> -->
-                    <!-- <div id="myMap"> -->
-                      <!--myAreaChart used for bar graph-->                      
-                      <!-- <canvas id="myAreaChart"></canvas>
-                    </div>          
-                  </div>
-                </div>
-              </div> -->
-    
-              <!-- TABLEAU -->
-              <!-- <div class="col-xl-4 col-lg-5"> -->
-                <!-- <div class="card shadow mb-4"> -->
-                  <!-- Card Header - Dropdown -->
-                  <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary"></h6>
-                  </div> -->
+ <!--###################################################################################-->
 
-        <!-- MAP HEADING-->
+        <!-- LEAFLET MAP HEADING-->
         <div class="card mb-3">
           
           <div class="card-header" id="map">
@@ -195,15 +189,7 @@ crossorigin=""></script>
             </div>
         </div> 
     
-            
-        <div class="col-xl-4 col-lg-5">
-                <div class="card shadow mb-4">
-                  <!-- Card Header - Dropdown -->
-                  <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary"></h6>
-                  </div> -->
-              </div>
-        </div>
+    <!--###################################################################################-->
 
         <!-- DATA TABLE HEADING-->
 
@@ -215,10 +201,12 @@ crossorigin=""></script>
              Data Table
             </a>
           </div>
-        
+          
         </div>
+
         <!-- DATA TABLE -->
         <div class="card-body">
+
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -249,8 +237,6 @@ crossorigin=""></script>
             </div>
           </div>
         
-
-      </div>
       <!-- /.container-fluid -->
 
       <!-- Sticky Footer -->
