@@ -18,71 +18,46 @@
           });
          });
     });
-  
-// //   SEARCH THROUGH DATE/TIME COLUMN AND RETURN RESULTS THAT MATCH USER INPUT
-// // Use d3 to select the filter table button
-//   var ufofilter = d3.select(".btn");
 
-//   ufofilter.on("click", function() {
+  // ########### FILTERING TABLE #####################
+    (function(document) {
+      'use strict';
     
-//     // Prevent the page from refreshing
-//     d3.event.preventDefault();
-  
-//     // Select the input element and get the raw HTML node
+      var LightTableFilter = (function(Arr) {
     
-//     // Get the value property of the input element
+        var _input;
     
-//       var filterElement = d3.select("#datetime");
-//       var datetime = filterElement.property("value");
-//         if (datetime) {
-//           var uFilter = data.filter(ufo => ufo.datetime === datetime);
-//     };
-
-//     console.log(uFilter);
+        function _onInputEvent(e) {
+          _input = e.target;
+          var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+          Arr.forEach.call(tables, function(table) {
+            Arr.forEach.call(table.tBodies, function(tbody) {
+              Arr.forEach.call(tbody.rows, _filter);
+            });
+          });
+        }
     
-//       var filterElement = d3.select("#city");
-//       var city = filterElement.property("value");
-//         if (city){
-//         if (city && datetime) {
-//           uFilter = uFilter.filter(ufo => ufo.city === city);
-//         }
-//         else {
-//           uFilter = data.filter(ufo => ufo.city === city);
-//         };
-//       };
-
-//     console.log(uFilter);
-
-//       var filterElement = d3.select("#shape");
-//       var shape = filterElement.property("value");
-      
-//       if (shape) {
-//         if (shape && datetime || city) {
-//          uFilter = uFilter.filter(ufo => ufo.shape === shape);
-//         }
-//         else {
-//           uFilter = data.filter(ufo => ufo.shape === shape);
-//         };
-//       };
-
-//     console.log(uFilter);
-
-//     d3.selectAll('td').remove()
-
-//   // using d3 to select the table
-
-//     var tBody = d3.select('.table>tbody');
+        function _filter(row) {
+          var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+          row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+        }
     
-// // starting the loop with forEach to create the table
-//     uFilter.forEach((filteredufo) => {
-//       tBody.append("tr");
-// // using object.values to store the values from the ufo sighting data
-//     Object.values(filteredufo).forEach((ufValues) => {
-//         // adding the data cells
-//         var cell = tBody.append("td");
-//         // placing values in the table
-//         cell.text(ufValues);
-//     });
-//   });
+        return {
+          init: function() {
+            var inputs = document.getElementsByClassName('light-table-filter');
+            Arr.forEach.call(inputs, function(input) {
+              input.oninput = _onInputEvent;
+            });
+          }
+        };
+      })(Array.prototype);
     
-//   });
+      document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+          LightTableFilter.init();
+        }
+      });
+    
+    })(document);
+
+

@@ -1,3 +1,7 @@
+######################################################################
+# IMPORT DEFICIENCIES
+######################################################################
+
 import json
 from sqlalchemy import inspect
 from sqlalchemy.ext.declarative import declarative_base
@@ -22,7 +26,7 @@ session = Session(engine)
 # inspector = inspect(engine)
 
 ######################################################################
-# TO CREATE TABLE
+# TO POPULATE TABLE IN TABLE.JS
 ######################################################################
 def get_all_data(table_name):
     session.query(table_name)
@@ -36,7 +40,7 @@ def get_all_data(table_name):
 
 
 ######################################################################
-# FOR ENDING STATION MARKERS
+# FOR ENDING STATION MARKERS IN MAP.JS
 ######################################################################
 
 def end_station_location(table_name):
@@ -49,7 +53,7 @@ def end_station_location(table_name):
     return end_station_df.to_json(orient='records')
 
 ######################################################################
-# FOR STARTING STATION MARKERS
+# FOR STARTING STATION MARKERS IN MAP.JS
 ######################################################################
 def start_station_location(table_name):
     session.query(table_name)
@@ -59,3 +63,25 @@ def start_station_location(table_name):
         session.close()
     
     return start_station_df.to_json(orient='records')
+
+
+######################################################################
+# FOR STARTING STATION DROPDOWN
+######################################################################
+
+def station_dropdown(table_name):
+    session.query(table_name)
+    station_list= []
+
+    with engine.connect() as con:
+        stations= con.execute(f'select endstationid, endstationname from {table_name}')
+        for station in stations:
+            station_list.append({'endstaionid':station[0], 'endstationname': station[1]})
+        session.close()
+    
+    return station_list
+
+
+
+
+        
