@@ -1,4 +1,4 @@
-* Citi Cycles 
+# Citi Cycles 
 Since 2013, the Citi Bike Program has implemented a robust infrastructure for collecting data on the program's utilization. Each month bike data is collected, organized, and made public on the [Citi Bike Data] (https://www.citibikenyc.com/system-data) webpage.
 
 For this project I imported two csv file; March 2018 and March 2019 with the following data into MySQL:
