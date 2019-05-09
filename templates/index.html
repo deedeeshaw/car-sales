@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+  <!-- <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
@@ -44,7 +44,7 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">Citi Cycles</a></h1>
+        <h1><a href="#intro" id="navigate" class="scrollto">Citi Cycles</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
       </div>
@@ -53,9 +53,9 @@
         <ul class="nav-menu">
           <!-- <li class="menu-active"><a href="#intro">Home</a></li> -->
           <li><a href="#about">About The Data</a></li>
-          <li><a href="#pricing">The Process</a></li>
+          <li><a href="#features">The Process</a></li>
           <li><a href="#team">Tech Stack</a></li>
-          <li><a href="#faq">Obstacles and Next Steps</a></li>
+          <li><a href="#faq">Next Steps</a></li>
           <li><a href="#contact">My Contact</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
@@ -83,11 +83,11 @@
     <section id="about" class="section-bg">
       <div class="container-fluid">
         <div class="section-header">
-          <h3 class="section-title">About The Data</h3>
+          
+          <h3 class="section-title"><a href="#intro">About The Data</a></h3>
           <span class="section-divider"></span>
-          <p class="section-description">
-            
-          </p>
+          <p class="section-description"></p>
+        
         </div>
 
         <div class="row">
@@ -132,10 +132,9 @@
       <div class="container">
 
         <div class="row">
-
           <div class="col-lg-8 offset-lg-4">
             <div class="section-header wow fadeIn" data-wow-duration="1s">
-              <h3 class="section-title">The Process</h3>
+              <h3 class="section-title"><a href="#intro">The Process</a></h3>
               <span class="section-divider"></span>
             </div>
           </div>
@@ -202,77 +201,7 @@
     </section>
     <!-- #features -->
 
-  
-   
-
-    <!--==========================
-      The Process Section
-    ============================-->
-    <!-- <section id="pricing" class="section-bg">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">The Process</h3>
-          <span class="section-divider"></span>
-          
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box featured wow fadeInLeft">
-              <h3>Choosing the Data</h3>
-              <!-- <h4><sup>$</sup>0<span> month</span></h4> -->
-              <!-- <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Used two data sets</li>
-                <li><i class="ion-android-checkmark-circle"></i> March 2018 and March 2019</li>
-                <li><i class="ion-android-checkmark-circle"></i> Over 40,000+ records</li>
-               
-              </ul>
-              
-            </div>
-          </div>
-          
-          
-          <div class="col-lg-4 col-md-6">
-            <div class="box featured wow fadeInUp">
-              <h3>Cleaning the Data</h3>
-              
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Removing or handling any unwanted data:</li>
-                <li><i class="ion-android-checkmark-circle"></i> Replaced the numeric representation of gender to 
-                  “undeclared”, “male” and “female”</li>
-                
-              </ul>
-             
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box featured wow fadeInRight">
-              <h3>Extracting Additional Data</h3>
-              
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Changed trip duration from minutes to hours</li>
-                <li><i class="ion-android-checkmark-circle"></i> Calculated age from the birth year</li>
-                <li><i class="ion-android-checkmark-circle"></i> Extracted year from start date and time</li>
-                <li><i class="ion-android-checkmark-circle"></i> Created a table ‘start_stations’ containing the columns Start Station ID, 
-                  Start Station Name, Start Station Latitude, 
-                  Start Station Longitude and an identical table for end stations</li>
-                
-              </ul>
-              
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section> -->
     
-    <!-- #pricing The Process -->
-
-
-   
 
     <!--==========================
       Teck Stack
@@ -280,7 +209,7 @@
     <section id="team" class="section-bg">
       <div class="container">
         <div class="section-header">
-          <h3 class="section-title">Teck Stack</h3>
+          <h3 class="section-title"><a href='#intro'>Teck Stack</a></h3>
           <span class="section-divider"></span>
           <p class="section-description">
               · Bootstrap (StartBootstrap) · Common Libraries (Pandas, Sqlalchemy) · Flask · 
@@ -297,40 +226,47 @@
     </section><!-- #team -->
 
      <!--==========================
-      Obstacles and Next Steps
+      Next Steps
     ============================-->
     <section id="faq">
         <div class="container">
   
           <div class="section-header">
-            <h3 class="section-title">Obstacles and Next Steps</h3>
+            <h3 class="section-title"><a href='#intro'>“How did it get so late so soon?” 
+              ― Dr. Seuss</a></h3>
             <span class="section-divider"></span>
           </div>
   
           <ul id="faq-list" class="wow fadeInUp">
+            
+  
             <li>
-              <a data-toggle="collapse" class="collapsed" href="#faq1">
-                Leaflet markers are available only in blue and the size does not vary.
-                <br/>
-                <br/>
-                I was able to find pointhi's github folder with various color markerd for Leaflet.
-               
+              <a data-toggle="collapse" class="collapsed">
+                Load all 40,000 records.
+               <br/>
               </a>
-              
             </li>
   
             <li>
-              <a data-toggle="collapse" href="#faq2" class="collapsed">
-               With 40,000+ records it is taking long to upload. Therefore I have loading only 1000 records.
+              <a data-toggle="collapse" class="collapsed">
+                Create a legend in Leaflet.
                <br/>
-               <br/>
-               Next Step: Given more time I would find a way to load all 40,000 records.
-                
               </a>
-              
             </li>
-  
-  
+
+            <li>
+              <a data-toggle="collapse" class="collapsed">
+                Refine the table filter.
+               <br/>
+              </a>
+            </li>
+
+            <li>
+              <a data-toggle="collapse" class="collapsed">
+                Compare data over seasons.
+               <br/>
+              </a>
+            </li>
           </ul>
   
         </div>
@@ -343,10 +279,10 @@
     <section id="contact">
       <div class="container">
         <div class="row wow fadeInUp">
-
+        
           <div class="col-lg-4 col-md-4">
             <div class="contact-about">
-              <h3>About Me</h3>
+              <h3><a href='#intro'>About Me</a></h3>
               <p>I am a result-driven Data Analyst with newly acquired skills in Python, SQL, and JavaScript
                  from the University of Arizona Data Analysis and Visualization Bootcamp. A former special education
                   professional with 10 plus years of experience collaborating with teams, 
@@ -414,9 +350,9 @@
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
             <a href="#intro" class="scrollto">Home</a>
-            <a href="#about" class="scrollto">About</a>
+            <!-- <a href="#about" class="scrollto">About</a>
             <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Use</a>
+            <a href="#">Terms of Use</a> -->
           </nav>
         </div>
       </div>

@@ -22,8 +22,8 @@
 <!-- d3 js  -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
 <!-- favicon -->
-  <link rel='icon' href="{{url_for('static', filename='favicon.ico')}}" type='image/x-icon'/ >
-
+ 
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
 
 <!-- LEAFLET -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -39,7 +39,7 @@ crossorigin=""></script>
 <body id="page-top">
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="#">Citi Cycles</a>
+    <a class="navbar-brand mr-1" href="/">Citi Cycles</a>
     <!-- NAVBAR -->
     <ul class="navbar-nav ml-auto ml-md-0">
   </nav>
@@ -77,43 +77,7 @@ crossorigin=""></script>
     <div id="content-wrapper">
 
       <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <!-- <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard - Citi Cycles</a>
-          </li>
-         
-        </ol>
-        <div>
-          <script img="static/js/img/citi_bike.jpg"></script>
-            <p>Citi Bike is the nation's largest bike share program,
-              with 12,000 bikes and 750 stations across Manhattan, Brooklyn, Queens and Jersey City. 
-              It was designed for quick trips with convenience in mind, 
-              and it’s a fun and affordable way to get around town.</p>
-            </br>
-            <p>Riding a Citi bike is as easy as 1, 2, 3</p>
-            <ul>
-              <li>Find a bike station and unlock a bike using your daily ride code or member key</li>
-              <li>Take as many rides as you like while your pass or membership is active.</li>
-              <li></li>
-            </ul>
-          </br>
-          <p>Which stations are most popular? Has the proportion of short-term customers and annual subscribers changed?
-              What is the gender breakdown of active participants (Male v. Female)? 
-              How does the average trip duration change by age?
-              The data collected by Citibike in the following areas helps answer these and other questions.</p>
-          <ol>
-            <li>Trip Duration (seconds)</li>
-            <li>Start Time and Date</li>
-            <li>Stop Time and Date</li>
-            <li>Start Station Name</li>
-            <li>End Station Name</li>
-            <li>Station ID</li>
-            <li>User Type (Customer = 24-hour pass or 3-day pass user; Subscriber = Annual Member)</li>
-            <li>Gender</li>
-            <li>Year of Birth</li>
-          </ol>
-        </div> -->
+       
 
  <!--###################################################################################-->
 
@@ -138,26 +102,24 @@ crossorigin=""></script>
               <div class="card-body">
                 <!-- <div class="chart-pie pt-4 pb-2" > -->
                   <!-- <div id="plot"> -->
-                      <div class='tableauPlaceholder' id='viz1556685351179' style='position: relative'>
-                          <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiCycle&#47;CycleSharingStory&#47;1_rss.png' style='border: none' />
-                          </a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                          <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-                          <param name='name' value='CitiCycle&#47;CycleSharingStory' />
-                          <param name='tabs' value='yes' /><param name='toolbar' value='yes' />
-                          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiCycle&#47;CycleSharingStory&#47;1.png' />
-                          <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' />
-                          <param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' />
-                          <param name='display_count' value='yes' /></object>
+                    <div class='tableauPlaceholder' id='viz1557427705427' style='position: relative'>
+                      <noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cy&#47;Cycle-Trips&#47;RidershipbyAgeandGender&#47;1_rss.png' style='border: none' />
+                      </a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                      <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+                      <param name='name' value='Cycle-Trips&#47;RidershipbyAgeandGender' />
+                      <param name='tabs' value='yes' /><param name='toolbar' value='yes' />
+                      <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cy&#47;Cycle-Trips&#47;RidershipbyAgeandGender&#47;1.png' /> <param name='animate_transition' value='yes' />
+                      <param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
+                      <param name='display_overlay' value='yes' /><param name='display_count' value='yes' />
+                      <param name='filter' value='publish=yes' /></object>
                       </div>                
-                          
-                          <script type='text/javascript'>                    
-                          var divElement = document.getElementById('viz1556685351179');                    
-                          var vizElement = divElement.getElementsByTagName('object')[0];                    
-                          vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';       
-                          var scriptElement = document.createElement('script');
-                          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                          vizElement.parentNode.insertBefore(scriptElement, vizElement);         
-                          </script>
+                      
+                      <script type='text/javascript'>
+                      var divElement = document.getElementById('viz1557427705427');                    
+                      var vizElement = divElement.getElementsByTagName('object')[0];                    
+                      vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                   
+                      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                      </script>
                     <canvas id="myPieChart plot"></canvas>
              </div>
               
